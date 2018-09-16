@@ -1,8 +1,8 @@
 name: flutter_toast2018
 description: A Flutter plugin with Android toast
 version: 0.0.1
-author:
-homepage:
+author: Jekton <ljtong64@gmail.com>
+homepage: https://jekton.github.io/
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

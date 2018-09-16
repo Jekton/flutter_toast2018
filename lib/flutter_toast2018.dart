@@ -2,12 +2,20 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
+enum ToastDuration {
+  short, long
+}
+
 class FlutterToast2018 {
   static const MethodChannel _channel =
-      const MethodChannel('flutter_toast2018');
+  const MethodChannel('example.com/flutter_toast2018');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  static Future<bool> toast(String msg, ToastDuration duration) async {
+    var argument = {
+      'content': msg,
+      'duration': duration.toString()
+    };
+    var success = await _channel.invokeMethod('toast', argument);
+    return success;
   }
 }
